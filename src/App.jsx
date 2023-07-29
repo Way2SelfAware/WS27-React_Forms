@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SignUpForm from "./components/SignUpForm";
 import Authenitcate from "./components/Authenitcate";
+import "./App.css";
 
 function App() {
   //token share

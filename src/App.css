@@ -11,9 +11,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +24,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -39,4 +42,84 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Global styles (optional) */
+body {
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+  background-color: #e3e3e3;
+}
+
+/* Container styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #43ddd5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #000000;
+  /* Yellow color */
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 8px 12px;
+  border: 1px solid #cb1515;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 5px;
+}
+
+p {
+  color: #ff0000;
+  margin: 5px 0;
+}
+
+button {
+  background-color: #000000;
+  /* Yellow color */
+  color: #000000;
+  /* Black color */
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #e3e3e3;
+  /* Light gray color */
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }

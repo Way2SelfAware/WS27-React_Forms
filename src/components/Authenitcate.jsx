@@ -5,6 +5,8 @@ export default function Authenitcate({ token }) {
   //useStates
   const [successMessage, setSuccessMessage] = useState(null);
   const [error, setError] = useState(null);
+  const [username, setUsername] = useState(null);
+
   //Async handleClick
   async function handleClick() {
     try {
@@ -20,6 +22,7 @@ export default function Authenitcate({ token }) {
       );
       const result = await response.json();
       setSuccessMessage(result.message);
+      setUsername(result.data.username);
     } catch (error) {
       setError(error.message);
     }
@@ -29,6 +32,7 @@ export default function Authenitcate({ token }) {
       <h2>Authenitcate!</h2>
       {successMessage && <p>{successMessage}</p>}
       {error && <p>{error}</p>}
+      {username && <p>Welcome, {username}! Thank you for signing up!</p>}
       <button onClick={handleClick}>Authenticate Token!</button>
     </div>
   );

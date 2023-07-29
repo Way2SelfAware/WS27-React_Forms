@@ -1,15 +1,24 @@
 import { useState } from "react";
 
 //SignUpForm
-export default function SignUpForm({setToken}) {
+export default function SignUpForm({ setToken }) {
   //State Variables
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [usernameError, setUsernameError] = useState(null);
 
   //Handling the Submit
   async function handleSubmit(event) {
     event.preventDefault();
+
+    //Form validation
+    if (username.length < 8) {
+      setUsernameError("Username must be at least 8 characters");
+      return;
+    } else {
+      setUsernameError(null);
+    }
     //fetchAPI
     try {
       const response = await fetch(
@@ -31,6 +40,7 @@ export default function SignUpForm({setToken}) {
   return (
     <>
       <h2>Sign Up!</h2>
+      {/* {usernameError && <p>{usernameError}</p>} */}
       {error && <p>{error}</p>}
       <form onSubmit={handleSubmit}>
         <label>
@@ -40,6 +50,7 @@ export default function SignUpForm({setToken}) {
             onChange={(e) => setUsername(e.target.value)}
           />
         </label>
+        {usernameError && <p>{usernameError}</p>}
         <label>
           Password:{" "}
           <input

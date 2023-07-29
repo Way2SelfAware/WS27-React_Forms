@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 //SignUpForm
-export default function SignUpForm() {
+export default function SignUpForm({setToken}) {
   //State Variables
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -10,7 +10,6 @@ export default function SignUpForm() {
   //Handling the Submit
   async function handleSubmit(event) {
     event.preventDefault();
-
     //fetchAPI
     try {
       const response = await fetch(

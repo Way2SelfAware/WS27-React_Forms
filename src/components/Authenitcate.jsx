@@ -18,7 +18,8 @@ export default function Authenitcate({ token }) {
           },
         }
       );
-      console.log("handleClick works!");
+      const result = await response.json();
+      setSuccessMessage(result.message);
     } catch (error) {
       setError(error.message);
     }
